@@ -35,6 +35,9 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+Route::get('/services', function () {
+    return view('services');
+});
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');
@@ -50,4 +53,6 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 
-
+Route::get('/about', function () {
+    return view('about');
+});
