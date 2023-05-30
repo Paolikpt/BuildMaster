@@ -19,7 +19,8 @@
           </div>
 
           <div class="col-lg-5" data-aos="fade">
-            <form action="forms/quote.php" method="post" class="php-email-form">
+            <form action="/register" method="post" class="php-email-form form-check" enctype="multipart/form-data">
+              @csrf
               <h3>Inscription</h3>
 
              
@@ -46,20 +47,26 @@
                 </div>
 
                 <div class="col-md-12">
-                  <input type="password" name="password" class="form-control" placeholder="Confirmer le mot de passe" required>
+                  <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmer le mot de passe" required>
                 </div>
                 <div class="col-md-12">
-                <form id="roleForm" method="POST" class="border">
                   <label for="role">S'inscrire en tant que :</label><br>
                   
                  <div class="text-center mt-2 ">
-                 <input type="radio" id="entreprise" name="role" value="entreprise" required>
-                  <label for="gestionnaire" class="me-5">Entreprise</label>
+                 <input type="radio" id="entreprise" name="role" value="entreprise"  required>
+                  <label for="entreprise" class="me-5">Entreprise</label>
                   
-                  <input type="radio" id="client" name="role" value="client" required>
+                  <input type="radio" id="client" name="role" value="client"  required>
                   <label for="client">Client</label><br><br>
+
+                  
+
+
+               
+
+              
                  </div>
-                </div>
+                  </div>
                 <p>Vous avez déja un compte, <a href="/login">connectez-vous.</a>.</p>
                 <div class="col-md-12 text-center">
                   <div class="loading">Loading</div>
@@ -68,6 +75,7 @@
                 </div>
 
               </div>
+              
             </form>
 
             

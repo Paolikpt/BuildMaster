@@ -2,7 +2,7 @@
 
 @section('title', 'Page d\'accueil')
 
-@section('content')
+@section('content') 
 <main id="main">
      <!-- ======= Get Started Section ======= -->
      <section id="get-started" class="get-started section-bg mt-5" style="height: 75vh !important" >
@@ -18,7 +18,8 @@
             </div>
   
             <div class="col-lg-5" data-aos="fade">
-              <form action="forms/quote.php" method="post" class="php-email-form">
+              <form action="/login" method="post" class="php-email-form" enctype="multipart/form-data">
+                @csrf
                 <h3> Connexion</h3>
   
                
