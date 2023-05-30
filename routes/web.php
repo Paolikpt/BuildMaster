@@ -34,5 +34,10 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+Route::get('/services', function () {
+    return view('services');
+});
 
-
+Route::get('/about', function () {
+    return view('about');
+});
