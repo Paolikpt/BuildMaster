@@ -39,9 +39,9 @@ Route::get('/services', function () {
     return view('services');
 });
 
-Route::get('/dashboard', function () {
+Route::get('dashboard', function () {
     return view('user.dashboard');
-});
+})->middleware("user");
 
 
 Route::post('/register', [UserController::class, 'register']);
@@ -58,15 +58,3 @@ Route::get('/about', function () {
 });
 
 
-Route::prefix('user')->middleware('user')->group(function () {
-    Route::get('/dashboard', function () {
-        // Code de la page du tableau de bord
-        return view('user.dashboard');
-    });
-
-
-    Route::get('/profile', function () {
-        // Code de la page du tableau de bord
-        return dd(false);
-    });
-});

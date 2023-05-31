@@ -20,7 +20,7 @@ class UserController extends Controller
             //die();
             Auth::login(Auth::getUser());
             //$request->session()->regenerate();
-            return  redirect()->intended('dashboard');
+            return  redirect()->intended('/dashboard');
             
         }else{
             return redirect()->back()->with('status', "Connexion echouée");
