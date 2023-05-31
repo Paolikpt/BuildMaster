@@ -1044,7 +1044,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>UpConstruction</h3>
+              <h3>Build Master</h3>
               <p>
                 A108 Adam Street <br>
                 NY 535022, USA<br><br>

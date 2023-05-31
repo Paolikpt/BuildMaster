@@ -7,7 +7,7 @@
 
         <div class="col-lg-4 col-md-6">
           <div class="footer-info">
-            <h3>UpConstruction</h3>
+            <h3>Build Master</h3>
             <p>
               A108 Adam Street <br>
               NY 535022, USA<br><br>
@@ -74,7 +74,7 @@
   <div class="footer-legal text-center position-relative">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>UpConstruction</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Build Master</span></strong>. All Rights Reserved
       </div>
        <!--   <div class="credits">
            All the links in the footer should remain intact. -->
