@@ -1,7 +1,7 @@
 
     @extends('layouts.auth')
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg mt-5">
+    <section id="services" class="services section-bg-services mt-5">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">

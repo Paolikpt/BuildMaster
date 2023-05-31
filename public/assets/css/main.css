@@ -69,6 +69,14 @@ section {
   height: 100vh;
 }
 
+.section-bg-login {
+  background-color: #f5f6f7;
+  height: 60vh;
+}
+
+.section-bg-services {
+  background-color: #f5f6f7;
+}
 .section-bg-register {
   background-color: #f5f6f7;
   height: 120vh;

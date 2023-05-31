@@ -56,3 +56,17 @@ Route::get('/logout', [UserController::class, 'logout']);
 Route::get('/about', function () {
     return view('about');
 });
+
+
+Route::prefix('user')->middleware('user')->group(function () {
+    Route::get('/dashboard', function () {
+        // Code de la page du tableau de bord
+        return view('user.dashboard');
+    });
+
+
+    Route::get('/profile', function () {
+        // Code de la page du tableau de bord
+        return dd(false);
+    });
+});
