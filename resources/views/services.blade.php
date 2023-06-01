@@ -6,8 +6,7 @@
 
         <div class="section-header">
           <h2>Services</h2>
-          <p>Voluptatem quibusdam ut ullam perferendis repellat non ut consequuntur est eveniet deleniti fignissimos eos
-            quam</p>
+          
         </div>
 
         <div class="row gy-4">
@@ -17,9 +16,10 @@
               <div class="icon">
                 <i class="fa-solid fa-mountain-city"></i>
               </div>
-              <h3>Nesciunt Mete</h3>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis
-                tempore et consequatur.</p>
+              <h3>Planification</h3>
+              <p>BuildMaster offre des outils de planification qui permettent de créer
+                des calendriers de projet détaillés, d'établir des dépendances entre les
+               tâches et d'identifier les jalons importants.</p>
               <a href="service-details.html" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
@@ -30,9 +30,9 @@
               <div class="icon">
                 <i class="fa-solid fa-arrow-up-from-ground-water"></i>
               </div>
-              <h3>Eosle Commodi</h3>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
-                nesciunt dolorem.</p>
+              <h3>Gestion des tâches</h3>
+              <p>BuildMaster permet de créer et de suivre les tâches liées au projet,
+                en attribuant des responsables, des délais et des priorités.</p>
               <a href="service-details.html" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
@@ -43,9 +43,9 @@
               <div class="icon">
                 <i class="fa-solid fa-compass-drafting"></i>
               </div>
-              <h3>Ledo Markt</h3>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
-                eos earum corrupti.</p>
+              <h3>Rapports et analyses</h3>
+              <p>BuildMaster génère des rapports et des analyses sur l'avancement du projet,
+                les performances de l'équipe, les coûts, les délais, etc.</p>
               <a href="service-details.html" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
@@ -56,9 +56,9 @@
               <div class="icon">
                 <i class="fa-solid fa-trowel-bricks"></i>
               </div>
-              <h3>Asperiores Commodit</h3>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
-                adipisci neque.</p>
+              <h3>Suivi des coûts et du budget</h3>
+              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem
+                alias eius labore.</p>
               <a href="service-details.html" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
@@ -69,7 +69,7 @@
               <div class="icon">
                 <i class="fa-solid fa-helmet-safety"></i>
               </div>
-              <h3>Velit Doloremque</h3>
+              <h3>Gestion des ressources</h3>
               <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem
                 alias eius labore.</p>
               <a href="service-details.html" class="readmore stretched-link">Learn more <i
@@ -82,9 +82,9 @@
               <div class="icon">
                 <i class="fa-solid fa-arrow-up-from-ground-water"></i>
               </div>
-              <h3>Dolori Architecto</h3>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
-                recusandae ducimus enim.</p>
+              <h3>Gestion des documents</h3>
+              <p>BuildMaster fournit des fonctionnalités de gestion des documents, ce qui permet 
+                de stocker les fichiers liés au projets tels que les plans les spécifications et les contrats.</p>
               <a href="service-details.html" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
