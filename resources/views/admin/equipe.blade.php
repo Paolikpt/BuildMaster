@@ -10,7 +10,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Build master, Dashboard Client</title>
+  <title>Build master Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -299,23 +299,26 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-       
-          
           <li class="nav-item">
-            <a class="nav-link" href="/dashboard">
-              <i class="icon-grid menu-icon bi bi-house"></i>
+            <a class="nav-link" href="/admin_dashboard">
+              <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Accueil</span>
             </a>
           </li>
-        
-          <div class="text-center  mx-auto">
-            <div class="my-4 text-center" ></div>
-
-         </div>
-          
-        
           <li class="nav-item">
-            <a class="nav-link" href="/user_projects">
+            <a class="nav-link" href="/equipe">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Equipe</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/utilisateur">
+              <i class="icon-columns menu-icon"></i>
+              <span class="menu-title">Utilisateur</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/projects">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Projets</span>
             </a>
@@ -326,22 +329,23 @@
 
          </div>
 
-       
+         <li class="nav-item">
+          <a class="nav-link" href="/communication">
+            <i class="icon-grid-2 menu-icon"></i>
+            <span class="menu-title">Communication</span>
+          </a>
+        </li>
           
         <li class="nav-item">
-          <a class="nav-link" href="/user_taches">
+          <a class="nav-link" href="/taches">
             <i class="icon-contract menu-icon"></i>
             <span class="menu-title">Tâches</span>
           </a>
         </li>
-        <div class="text-center  mx-auto">
-          <div class="my-4 text-center" ></div>
-
-       </div>
         <li class="nav-item">
-          <a class="nav-link" href="/user_parametre">
+          <a class="nav-link" href="/parametre">
             <i class="icon-head menu-icon"></i>
-            <span class="menu-title">Paramètres</span>
+            <span class="menu-title">Paramètre</span>
           </a>
         </li>
 

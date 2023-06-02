@@ -5,7 +5,9 @@
 @section('content') 
 <main id="main">
      <!-- ======= Get Started Section ======= -->
-     <section id="get-started" class="get-started section-bg mt-5" style="height: 75vh !important" >
+     <section id="get-started" class="get-started section-bg mt-5" style="height: 70vh !important" >
+      <div class="mt-5"></div>
+
         <div class="container">
   
           <div class="row justify-content-between gy-4">

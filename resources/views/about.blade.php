@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 <!-- ======= Our Projects Section ======= -->
-<section id="projects" class="projects">
+<section id="projects" class="projects mt-5">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">

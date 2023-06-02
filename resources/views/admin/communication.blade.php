@@ -1,3 +1,8 @@
+<?php 
+  use Illuminate\Support\Facades\Auth;
+
+  $user = Auth::user();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +10,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>Build master Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -20,16 +25,18 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
 </head>
 <body>
-    <img src="assets/img/about.jpg" alt="etur adipisicing elit. Perferendis eum possimus enim, iste similique veniam porro optio laboriosam mollitia odio explicabo deleniti, quos necessitatibus? Alias, soluta! Totam numquam similique consequuntur?">
-    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis eum possimus enim, iste similique veniam porro optio laboriosam mollitia odio explicabo deleniti, quos necessitatibus? Alias, soluta! Totam numquam similique consequuntur?</h1>
+  
+      
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center ">
+        <a class="navbar-brand brand-logo " href="/dashboard"><h1 class="h2">BuildMaster<span class="text-warning">.</span></h1></a>
+        <a class="navbar-brand brand-logo-mini" href="/dashboard"><img src="images/logo-mini.svg" alt="logo"/></a>
+        
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -75,7 +82,7 @@
                   </div>
                 </div>
                 <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Settings</h6>
+                  <h6 class="preview-subject font-weight-normal">Paramètres</h6>
                   <p class="font-weight-light small-text mb-0 text-muted">
                     Private message
                   </p>
@@ -103,19 +110,15 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
-                Settings
+              Paramètres
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item"  href="/logout">
                 <i class="ti-power-off text-primary"></i>
-                Logout
+                Déconnexion
               </a>
             </div>
           </li>
-          <li class="nav-item nav-settings d-none d-lg-flex">
-            <a class="nav-link" href="#">
-              <i class="icon-ellipsis"></i>
-            </a>
-          </li>
+         
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
@@ -126,7 +129,6 @@
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
       <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="ti-settings"></i></div>
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
           <p class="settings-heading">SIDEBAR SKINS</p>
@@ -298,105 +300,56 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/admin_dashboard">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Accueil</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="/equipe">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
+              <span class="menu-title">Equipe</span>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" href="/utilisateur">
               <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Form elements</span>
-              <i class="menu-arrow"></i>
+              <span class="menu-title">Utilisateur</span>
             </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="icon-contract menu-icon"></i>
-              <span class="menu-title">Icons</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-              <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/documentation/documentation.html">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Documentation</span>
+            <a class="nav-link" href="/projects">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Projets</span>
             </a>
           </li>
+        
+         <div class="text-center  mx-auto">
+            <div class="my-4 text-center" ></div>
+
+         </div>
+
+         <li class="nav-item">
+          <a class="nav-link" href="/communication">
+            <i class="icon-grid-2 menu-icon"></i>
+            <span class="menu-title">Communication</span>
+          </a>
+        </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="/taches">
+            <i class="icon-contract menu-icon"></i>
+            <span class="menu-title">Tâches</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/parametre">
+            <i class="icon-head menu-icon"></i>
+            <span class="menu-title">Paramètre</span>
+          </a>
+        </li>
+
+         
         </ul>
       </nav>
       <!-- partial -->
@@ -406,8 +359,8 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Aamir</h3>
-                  <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
+                  <h3 class="font-weight-bold">Bonjour {{ $user->prenom }}</h3>
+                  <h6 class="font-weight-normal mb-0">Je vous souhaite une bonne journée ! </h6>
                 </div>
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
@@ -489,6 +442,49 @@
               </div>
             </div>
           </div>
+
+          <div class="card mb-5">
+            <div class="card-body">
+              <h5 class="card-title">Fonctionnalités</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <button class="btn btn-outline-primary btn-block">
+                    <i class="bi bi-gear mr-3"></i> Créer une équipe
+                  </button>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <button class="btn btn-outline-primary btn-block">
+                    <i class="bi bi-gear mr-3"></i> Créer un Projet
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <button class="btn btn-outline-warning btn-block">
+                    <i class="bi bi-card-checklist mr-3"></i> Créer une tâche
+                  </button>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <button class="btn btn-outline-warning btn-block">
+                    <i class="bi bi-gear mr-3"></i> Planifier un projet
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <button class="btn btn-outline-success btn-block">
+                    <i class="bi bi-gear mr-3"></i> Passer un message
+                  </button>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <button class="btn btn-outline-success btn-block">
+                    <i class="bi bi-gear mr-3"></i> Faire une annonce
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">

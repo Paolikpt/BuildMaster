@@ -5,7 +5,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Services</h2>
+          <h2>Fonctionnalités</h2>
           
         </div>
 

@@ -14,10 +14,10 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/" class="active">Accueil</a></li>    
-          <li><a href="/services">Services</a></li>
-          <li><a href="projects.html">Projets</a></li>
-          <li><a href="about.html">A propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/services">Fonctionnalités</a></li>
+          <li><a href="/ourprojects">Projets</a></li>
+          <li><a href="/about">A propos</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
