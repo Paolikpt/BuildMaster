@@ -40,8 +40,11 @@ class ProjetController extends Controller
 
 
 
-    public function update(Request $request, Project $project)
+    public function update(Request $request, $id)
     {
+
+        $projectById =  Project::findOrFail($id);
+
         $request->validate([
             'nom' => 'required',
             'description' => 'required',
@@ -49,7 +52,7 @@ class ProjetController extends Controller
             'duree' => 'required',
         ]);
 
-        $project->update($request->all());
+        $projectById->update($request->all());
 
         return redirect()->route('projects.index')->with('success', 'Le projet a été mis à jour avec succès.');
     }
@@ -58,14 +61,22 @@ class ProjetController extends Controller
 
 
 
-    public function destroy($id)
+    public function delete($id)
     {
-        $project = Project::findOrFail($id);
+           // dd("lorem ipsum");
+
+            $project = Project::findOrFail($id);
         $project->delete();
         
         // Rediriger ou effectuer d'autres actions après la suppression du projet
         
         return redirect('/user_projects')->with('success', 'Projet supprimé avec succès');
+      
+    }
+
+    public function getUserById($id){
+        $project = Project::findOrFail($id);
+        return view('user.updateProject', compact('project'));
     }
 
 }

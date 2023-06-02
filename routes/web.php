@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\UserController;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,7 +77,7 @@ Route::get('/contact', function () {
 
 
 
-Route::get('/dashboard', [ProjetController::class, 'getDashboard'])->middleware("user");
+Route::get('/dashboard', [ProjetController::class, 'getDashboard'])->middleware("user")->name('projects.index');
 
 
 
@@ -131,6 +132,12 @@ Route::get('/user_parametre', function () {
 
 
 
-Route::get('/user_projects', [ProjetController::class, 'index'])->middleware("user");
+Route::get('/user_projects', [ProjetController::class, 'index'])->middleware("user")->name('projects.index');
 
-Route::delete('/projets/{id}', [ProjetController::class, 'destroy'])->name('projects.destroy');
+Route::delete('/projets/{id}', [ProjetController::class, 'delete'])->name('projects.destroy')->middleware('user');
+
+Route::put('/projects/{id}', [ProjetController::class, 'update'])->name('projects.update')->middleware('user');
+
+// Route::get('/modifierProjet/{id}', [ProjetController::class, 'getUserById'])->name('des.ff');
+
+Route::get('/projects/{id}', [ProjetController::class, 'getUserById'])->middleware("user");

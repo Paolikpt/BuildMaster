@@ -2,6 +2,8 @@
   use Illuminate\Support\Facades\Auth;
 
   $user = Auth::user();
+
+  $current = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +28,7 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+  
 </head>
 <body>
   
@@ -471,40 +474,76 @@
                         <td>{{ $project->type }}</td>
                         <td>{{ $project->duree }}</td>
 
-                        <td class="text-center"><button type="button" class="btn btn-warning">Modifier</button>
-                                                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete">Supprimer</button>
+                        <td class="text-center">
                  
-                                                  <div class="modal fade" id="myModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                          <form class="forms-sample" method="POST" action="/projects">
-                                                            @csrf
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="myModalLabel"><i class="bi bi-bag mr-3" style="scale: 2 !important"></i> Supression d'un Projet</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <!-- Votre formulaire -->
-                                                                
-                                                                
-                                                                 
-                                                                <div class="text-center">Vous-vous vraiment Supprimer le projet : {{$project->id}} ?</div>
-                                                                 
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-light" data-dismiss="modal">Annuler</button>
-                                                                <a href="/projects/{{$project->id}}">                                                                <button class="btn btn-primary">Confirmer</button>
-                                                                </a>
-                                                            </div>
-                                                          </form>
-                                                  
-                                                        </div>
-                                                    </div>
+                                                
+
+                                                  <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
+                                                    @csrf
+                                                    <a href="/projects/{{ $project->id }}"><button type="button" class="btn btn-warning">Modifier </button> </a>
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">Supprimer</button>
+                                                </form>
+                                                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog" role="document">
+                                                      <div class="modal-content">
+                                                        <form class="forms-sample" method="PUT" action="/projects/{{ $project->id }}">
+                                                          @csrf
+                                                          @method('PUT')
+                                                          <div class="modal-header">
+                                                              <h5 class="modal-title" id="myModalLabel"><i class="bi bi-bag mr-3" style="scale: 2 !important"></i> Modification du Projet : {{ $project->nom }} </h5>
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                  <span aria-hidden="true">&times;</span>
+                                                              </button>
+                                                          </div>
+                                                          <div class="modal-body">
+                                                              <!-- Votre formulaire -->
+                                                              
+                                                              
+                                                                <div class="form-group row">
+                                                                  <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nom</label>
+                                                                  <div class="col-sm-9">
+                                                                    <input type="text" value="{{ $project->nom }}" class="form-control" name="nom" id="exampleInputUsername2" placeholder="projet de contruction du port autonome de..." required>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                  <label for="exampleTextarea1" class="col-sm-3 col-form-label">Description</label>
+                                                                  <div class="col-sm-9">
+                                                                    <textarea class="form-control" name="description" id="exampleTextarea1" rows="4" placeholder="Une petite description de votre preojet ici..." required>{{ $project->description }}</textarea>
+                                                
+                                                                  </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                  <label for="exampleInputMobile" class="col-sm-3 col-form-label">Type</label>
+                                                                  <div class="col-sm-9">
+                                                                    <input type="text" value="{{ $project->type }}" class="form-control" name="type" id="exampleInputMobile" placeholder="Type de Projet..." required>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                  <label for="exampleInputMobile1" class="col-sm-3 col-form-label">Durée</label>
+                                                                  <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" value="{{ $project->duree }}" name="duree" id="exampleInputMobile1" placeholder="10 mois..." required>
+                                                                  </div>
+                                                                </div>
+                                                   
+                                                               
+                                                            
+                                                               
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                              <button type="button" class="btn btn-light" data-dismiss="modal">Fermer</button>
+                                                              <button type="submit" class="btn btn-primary">Modifier</button>
+                                                          </div>
+                                                        </form>
+                                                
+                                                      </div>
                                                   </div>
+                                                </div>
+                                                
 
                           </td>
+                          
+
                       </tr>
                            
                        @endforeach
