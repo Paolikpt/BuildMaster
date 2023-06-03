@@ -17,10 +17,15 @@ class UserController extends Controller
             "password" => $request->password
         ])){
             //dd(Auth::getUser());
-            //die();
+            //die();            //$request->session()->regenerate();
             Auth::login(Auth::getUser());
-            //$request->session()->regenerate();
-            return  redirect()->intended('/dashboard');
+            if(Auth::user()->role == 'Entreprise'){
+                return  redirect('/manager/dashboard');           
+            }
+            else{
+                return  redirect('/user/dashboard');
+            }
+            
             
         }else{
             return redirect()->back()->with('status', "Connexion echouée");

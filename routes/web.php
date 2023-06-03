@@ -24,9 +24,7 @@ Route::get('/test', function () {
     return view('welcome');
 });
 
-Route::get('/t', function () {
-    return view('test');
-});
+
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -41,9 +39,6 @@ Route::get('/services', function () {
     return view('services');
 });
 
-Route::get('admin_dashboard', function () {
-    return view('admin.dashboard');
-})->middleware("user");
 
 
 Route::post('/register', [UserController::class, 'register']);
@@ -54,16 +49,13 @@ Route::post('/login', [UserController::class, 'login']);
 
 Route::get('/logout', [UserController::class, 'logout']);
 
-Route::post('/projects', [ProjetController::class, 'create']);
 
 
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/projects', function () {
-    return view('user.projects');
-})->middleware("user");
+
 
 Route::get('/ourprojects', function () {
     return view('services');
@@ -77,7 +69,6 @@ Route::get('/contact', function () {
 
 
 
-Route::get('/dashboard', [ProjetController::class, 'getDashboard'])->middleware("user")->name('projects.index');
 
 
 
@@ -85,59 +76,80 @@ Route::get('/dashboard', [ProjetController::class, 'getDashboard'])->middleware(
 
 
 
-Route::get('/utilisateur', function () {
-    return view('admin.utilisateur');
-})->middleware("user");
-
-
-Route::get('/taches', function () {
-    return view('admin.taches');
-})->middleware("user");
-
-
-Route::get('/projects', function () {
-    return view('admin.projects');
-});
 
 
 
-Route::get('/parametre', function () {
-    return view('admin.parametres');
-})->middleware("user");
 
 
 
-Route::get('/equipe', function () {
-    return view('admin.equipe');
-})->middleware("user");
+// Route::get('/modifierProjet/{id}', [ProjetController::class, 'getUserById'])->name('des.ff');
 
 
-Route::get('/communication', function () {
-    return view('admin.communication');
-})->middleware("user");
 
+//routes clients 
+//toutes les routes du client
 
-Route::get('/communication', function () {
-    return view('user.projects');
-})->middleware("user");
-
-
-Route::get('/user_taches', function () {
+Route::get('/user/taches', function () {
     return view('user.taches');
 })->middleware("user");
 
-Route::get('/user_parametre', function () {
+Route::get('/user/parametre', function () {
     return view('user.parametres');
 })->middleware("user");
 
 
+// Route::get('/user/parametre', [ProjetController::class, 'getParametres'])->middleware("user");
 
-Route::get('/user_projects', [ProjetController::class, 'index'])->middleware("user")->name('projects.index');
+Route::get('/user/projects', function () {
+    return view('user.projects');
+})->middleware("user");
 
-Route::delete('/projets/{id}', [ProjetController::class, 'delete'])->name('projects.destroy')->middleware('user');
 
-Route::put('/projects/{id}', [ProjetController::class, 'update'])->name('projects.update')->middleware('user');
+Route::post('/user/projects', [ProjetController::class, 'create']);
 
-// Route::get('/modifierProjet/{id}', [ProjetController::class, 'getUserById'])->name('des.ff');
+Route::get('/user/projects/{id}', [ProjetController::class, 'getUserById'])->middleware("user");
 
-Route::get('/projects/{id}', [ProjetController::class, 'getUserById'])->middleware("user");
+Route::get('/user/projects', [ProjetController::class, 'index'])->middleware("user")->name('projects.index');
+
+Route::delete('/user/projets/{id}', [ProjetController::class, 'delete'])->name('projects.destroy')->middleware('user');
+
+Route::put('/user/projects/{id}', [ProjetController::class, 'update'])->name('projects.update')->middleware('user');
+
+Route::get('/user/dashboard', [ProjetController::class, 'getDashboard'])->middleware("user")->name('dashboard.index');
+
+
+
+
+
+// manager routes
+// toutes les routes du manager
+Route::middleware('manager')->prefix('manager')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('manager.dashboard');
+    });
+
+    Route::get('/projects', function () {
+        return view('manager.projects');
+    });
+
+    Route::get('/parametre', function () {
+        return view('manager.parametres');
+    });
+
+    Route::get('/equipe', function () {
+        return view('manager.equipe');
+    });
+
+    Route::get('/communication', function () {
+        return view('manager.communication');
+    });
+
+    Route::get('/utilisateur', function () {
+        return view('manager.utilisateur');
+    });
+
+    Route::get('/taches', function () {
+        return view('manager.taches');
+    });
+});
+

@@ -7,29 +7,10 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+  @include('components.default.template-head')
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Build master, Dashboard Client</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/feather/feather.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
-  
-</head>
+
+
 <body>
   
       
@@ -38,7 +19,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center ">
         <a class="navbar-brand brand-logo " href="/dashboard"><h1 class="h2">BuildMaster<span class="text-warning">.</span></h1></a>
-        <a class="navbar-brand brand-logo-mini" href="/dashboard"><img src="images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="/dashboard"><img src="../images/logo-mini.svg" alt="logo"/></a>
         
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -108,10 +89,10 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile"/>
+              <img src="../images/faces/face28.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a href="/user/parametre"  class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
               Paramètres
               </a>
@@ -243,7 +224,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -251,7 +232,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="../images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -262,7 +243,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -270,7 +251,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="../images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -278,7 +259,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -286,7 +267,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -300,57 +281,8 @@
       </div>
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-       
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/dashboard">
-              <i class="icon-grid menu-icon bi bi-house"></i>
-              <span class="menu-title">Accueil</span>
-            </a>
-          </li>
-        
-          <div class="text-center  mx-auto">
-            <div class="my-4 text-center" ></div>
+      @include('components.default.template-sidebar')
 
-         </div>
-          
-        
-          <li class="nav-item">
-            <a class="nav-link" href="/user_projects">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Projets</span>
-            </a>
-          </li>
-        
-         <div class="text-center  mx-auto">
-            <div class="my-4 text-center" ></div>
-
-         </div>
-
-       
-          
-        <li class="nav-item">
-          <a class="nav-link" href="/user_taches">
-            <i class="icon-contract menu-icon"></i>
-            <span class="menu-title">Tâches</span>
-          </a>
-        </li>
-        <div class="text-center  mx-auto">
-          <div class="my-4 text-center" ></div>
-
-       </div>
-        <li class="nav-item">
-          <a class="nav-link" href="/user_parametre">
-            <i class="icon-head menu-icon"></i>
-            <span class="menu-title">Paramètres</span>
-          </a>
-        </li>
-
-         
-        </ul>
-      </nav>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -383,7 +315,7 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form class="forms-sample" method="POST" action="/projects">
+        <form class="forms-sample" method="POST" action="/user/projects">
           @csrf
           <div class="modal-header">
               <h5 class="modal-title" id="myModalLabel"><i class="bi bi-bag mr-3" style="scale: 2 !important"></i> Soumission d'un Projet</h5>
@@ -480,7 +412,7 @@
 
                                                   <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
                                                     @csrf
-                                                    <a href="/projects/{{ $project->id }}"><button type="button" class="btn btn-warning">Modifier </button> </a>
+                                                    <a href="/user/projects/{{ $project->id }}"><button type="button" class="btn btn-warning">Modifier </button> </a>
                                                     @method('DELETE')
                                                     <button class="btn btn-danger" type="submit">Supprimer</button>
                                                 </form>
@@ -557,15 +489,7 @@
           </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
-          </div>
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span> 
-          </div>
-        </footer> 
+        @include('components.default.template-footer')
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -573,27 +497,8 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+  @include('components.default.template-bottom-links')
 
-  <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
-  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script src="js/dataTables.select.min.js"></script>
-
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
-  <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
 </body>
 

@@ -15,6 +15,7 @@ class ProjetController extends Controller
         return view('user.projects', compact('projects'));
     }
 
+
     public function getDashboard(){
         $projects = Project::all();
         return view('user.dashboard', compact('projects'));
@@ -35,7 +36,7 @@ class ProjetController extends Controller
 
         Project::create($request->all());
 
-        return redirect('/user_projects')->with('success', 'Le projet a été créé avec succès.');
+        return redirect('/user/projects')->with('success', 'Le projet a été créé avec succès.');
     }
 
 
@@ -70,7 +71,7 @@ class ProjetController extends Controller
         
         // Rediriger ou effectuer d'autres actions après la suppression du projet
         
-        return redirect('/user_projects')->with('success', 'Projet supprimé avec succès');
+        return redirect('/user/projects')->with('success', 'Projet supprimé avec succès');
       
     }
 
@@ -78,5 +79,7 @@ class ProjetController extends Controller
         $project = Project::findOrFail($id);
         return view('user.updateProject', compact('project'));
     }
+
+
 
 }
