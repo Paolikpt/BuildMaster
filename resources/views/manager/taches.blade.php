@@ -84,11 +84,11 @@
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../images/faces/face28.jpg" alt="profile"/>
+            <a class="nav-link dropdown-toggle m-0 p-0" style="scale: 2 !important;" href="#" data-toggle="dropdown" id="profileDropdown">
+              <i class="bi bi-person-circle m-0 p-0"  ></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a href="/user/parametre"  class="dropdown-item">
+              <a href="/manager/parametre"  class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
               Paramètres
               </a>
@@ -285,25 +285,20 @@
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                   <h3 class="font-weight-bold">Bonjour {{ $user->prenom }}</h3>
-                  <h6 class="font-weight-normal mb-0">Je vous souhaite une bonne journée ! </h6>
+                  <h6 class="font-weight-normal mb-0">Bienvenue dans le dahboard Manager ! </h6>
                 </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                     <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
-                      <a class="dropdown-item" href="#">January - March</a>
-                      <a class="dropdown-item" href="#">March - June</a>
-                      <a class="dropdown-item" href="#">June - August</a>
-                      <a class="dropdown-item" href="#">August - November</a>
-                    </div>
+                   <div class="col-12 col-xl-4">
+                  <div class="justify-content-end d-flex">
+                   <div class="flex-md-grow-1 flex-xl-grow-0">
+                     <button class=" btn btn-sm btn-light bg-white dropdown-toggle">
+                      Dashboard Gestionnaire
+                     </button>
+                   
+                   </div>
                   </div>
                  </div>
-                </div>
               </div>
             </div>
           </div>

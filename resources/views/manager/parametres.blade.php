@@ -84,11 +84,11 @@
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../images/faces/face28.jpg" alt="profile"/>
+            <a class="nav-link dropdown-toggle m-0 p-0" style="scale: 2 !important;" href="#" data-toggle="dropdown" id="profileDropdown">
+              <i class="bi bi-person-circle m-0 p-0"  ></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a href="/user/parametre"  class="dropdown-item">
+              <a href="/manager/parametre"  class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
               Paramètres
               </a>
@@ -285,132 +285,86 @@
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                   <h3 class="font-weight-bold">Bonjour {{ $user->prenom }}</h3>
-                  <h6 class="font-weight-normal mb-0">Je vous souhaite une bonne journée ! </h6>
+                  <h6 class="font-weight-normal mb-0">Bienvenue dans le dahboard Manager ! </h6>
                 </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                     <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
-                      <a class="dropdown-item" href="#">January - March</a>
-                      <a class="dropdown-item" href="#">March - June</a>
-                      <a class="dropdown-item" href="#">June - August</a>
-                      <a class="dropdown-item" href="#">August - November</a>
-                    </div>
+                   <div class="col-12 col-xl-4">
+                  <div class="justify-content-end d-flex">
+                   <div class="flex-md-grow-1 flex-xl-grow-0">
+                     <button class=" btn btn-sm btn-light bg-white dropdown-toggle">
+                      Dashboard Gestionnaire
+                     </button>
+                   
+                   </div>
                   </div>
                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card tale-bg">
-                <div class="card-people mt-auto">
-                  <img src="../images/dashboard/people.svg" alt="people">
-                  <div class="weather-info">
-                    <div class="d-flex">
-                      <div>
-                        <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
+
+
+
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header">Paramètres du compte Gestionnaire</div>
+        
+                  <div class="card-body">
+                    <form action="/user/parametre" method="GET" class="needs-validation" novalidate>
+                      @csrf
+                      @method('PUT')
+        
+                      <div class="mb-3">
+                        <label for="name" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ $user->nom }}" required>
+                        <div class="invalid-feedback">
+                          Veuillez fournir un nom.
+                        </div>
                       </div>
-                      <div class="ml-2">
-                        <h4 class="location font-weight-normal">Bangalore</h4>
-                        <h6 class="font-weight-normal">India</h6>
+                      
+                      <div class="mb-3">
+                        <label for="prenom" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" name="name" value="{{ $user->prenom }}" required>
+                        <div class="invalid-feedback">
+                          Veuillez fournir un nom.
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-tale">
-                    <div class="card-body">
-                      <p class="mb-4">Today’s Bookings</p>
-                      <p class="fs-30 mb-2">4006</p>
-                      <p>10.00% (30 days)</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-dark-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Total Bookings</p>
-                      <p class="fs-30 mb-2">61344</p>
-                      <p>22.00% (30 days)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                  <div class="card card-light-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Number of Meetings</p>
-                      <p class="fs-30 mb-2">34040</p>
-                      <p>2.00% (30 days)</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
-                    <div class="card-body">
-                      <p class="mb-4">Number of Clients</p>
-                      <p class="fs-30 mb-2">47033</p>
-                      <p>0.22% (30 days)</p>
-                    </div>
+        
+                      <div class="mb-3">
+                        <label for="email" class="form-label">Adresse e-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" required>
+                        <div class="invalid-feedback">
+                          Veuillez fournir une adresse e-mail valide.
+                        </div>
+                      </div>
+        
+                      <div class="mb-3">
+                        <label for="password" class="form-label">Nouveau mot de passe</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                      </div>
+        
+                      <div class="mb-3">
+                        <label for="confirm_password" class="form-label">Confirmer le mot de passe</label>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                        <div class="invalid-feedback">
+                          Les mots de passe ne correspondent pas.
+                        </div>
+                      </div>
+        
+                      <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </form>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="card mb-5">
-            <div class="card-body">
-              <h5 class="card-title">Fonctionnalités</h5>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <button class="btn btn-outline-primary btn-block">
-                    <i class="bi bi-gear mr-3"></i> Créer une équipe
-                  </button>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <button class="btn btn-outline-primary btn-block">
-                    <i class="bi bi-gear mr-3"></i> Créer un Projet
-                  </button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <button class="btn btn-outline-warning btn-block">
-                    <i class="bi bi-card-checklist mr-3"></i> Créer une tâche
-                  </button>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <button class="btn btn-outline-warning btn-block">
-                    <i class="bi bi-gear mr-3"></i> Planifier un projet
-                  </button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <button class="btn btn-outline-success btn-block">
-                    <i class="bi bi-gear mr-3"></i> Passer un message
-                  </button>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <button class="btn btn-outline-success btn-block">
-                    <i class="bi bi-gear mr-3"></i> Faire une annonce
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+
+
+
+
           
          </div>
         <!-- content-wrapper ends -->

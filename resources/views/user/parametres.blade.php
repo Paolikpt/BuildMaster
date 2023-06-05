@@ -88,8 +88,8 @@
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../images/faces/face28.jpg" alt="profile"/>
+            <a class="nav-link dropdown-toggle m-0 p-0" style="scale: 2 !important;" href="#" data-toggle="dropdown" id="profileDropdown">
+              <i class="bi bi-person-circle m-0 p-0"  ></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a href="/user/parametre"  class="dropdown-item">
@@ -230,7 +230,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Paramètres {{ $user->prenom }}</h3>
+                  <h3 class="font-weight-bold">Paramètres de {{ $user->prenom }}</h3>
                 </div>
                 <div class="container">
                   <div class="row justify-content-center">

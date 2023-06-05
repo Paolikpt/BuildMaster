@@ -140,9 +140,11 @@ Route::middleware('manager')->prefix('manager')->group(function () {
         return view('manager.equipe');
     });
 
-    Route::get('/communication', function () {
+  /*
+      Route::get('/communication', function () {
         return view('manager.communication');
     });
+   */
 
     Route::get('/utilisateur', function () {
         return view('manager.utilisateur');

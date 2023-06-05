@@ -85,11 +85,11 @@
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../images/faces/face28.jpg" alt="profile"/>
+            <a class="nav-link dropdown-toggle m-0 p-0" style="scale: 2 !important;" href="#" data-toggle="dropdown" id="profileDropdown">
+              <i class="bi bi-person-circle m-0 p-0"  ></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a href="/user/parametre"  class="dropdown-item">
+              <a href="/manager/parametre"  class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
               Paramètres
               </a>
@@ -304,6 +304,15 @@
               </div>
             </div>
           </div>
+
+
+
+
+
+
+
+
+
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card tale-bg">

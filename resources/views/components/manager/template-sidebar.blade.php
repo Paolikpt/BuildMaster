@@ -30,12 +30,7 @@
 
    </div>
 
-   <li class="nav-item">
-    <a class="nav-link" href="/manager/communication">
-      <i class="icon-grid-2 menu-icon"></i>
-      <span class="menu-title">Communication</span>
-    </a>
-  </li>
+ 
     
   <li class="nav-item">
     <a class="nav-link" href="/manager/taches">
