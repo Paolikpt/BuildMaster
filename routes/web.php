@@ -124,10 +124,12 @@ Route::get('/user/dashboard', [ProjetController::class, 'getDashboard'])->middle
 // manager routes
 // toutes les routes du manager
 Route::middleware('manager')->prefix('manager')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('manager.dashboard');
-    });
 
+
+    Route::get('/dashboard', [ProjetController::class, 'getManagerDashboard'])->name('dashboard.index');
+
+
+    
     Route::get('/projects', function () {
         return view('manager.projects');
     });
@@ -153,5 +155,14 @@ Route::middleware('manager')->prefix('manager')->group(function () {
     Route::get('/taches', function () {
         return view('manager.taches');
     });
+
+    Route::get('/projects/manage/{id}', [ProjetController::class, 'getProjectByIdForAddTask']);
+
+
+
+
+
+    Route::post('/projects/{id}/tasks/add', [ProjetController::class, 'addTaskToProject']);
+
 });
 

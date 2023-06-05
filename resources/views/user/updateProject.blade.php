@@ -314,8 +314,14 @@
                         </div>
                     <div class="form-group">
                         <label for="exampleInputMobile1">Durée</label>
-                        <input value="{{ $project->duree }}" type="text" class="form-control" name="duree" id="exampleInputMobile1" placeholder="10 mois..." required>
+                        <input value="{{ $project->duree }}" type="number" class="form-control" name="duree" id="exampleInputMobile1" placeholder="10 mois..." required>
                     </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputMobilex">Budget (EN FCFA)</label>
+                      <input value="{{ $project->budget }}" type="number" class="form-control" name="budget" id="exampleInputMobilex" placeholder="budget du projet"  required>
+                  </div>
+                  
                           
                 <div class="text-center">
                     <a href="/user/projects"><button type="button"  class="btn btn-secondary">Annuler</button></a>
@@ -323,6 +329,7 @@
 
 
                 </div>
+             
                         </form>
                       </div>
                     </div>

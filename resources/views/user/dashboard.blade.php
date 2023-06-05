@@ -84,8 +84,8 @@
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle m-0 p-0" style="scale: 2 !important;" href="#" data-toggle="dropdown" id="profileDropdown">
-              <i class="bi bi-person-circle m-0 p-0"  ></i>
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img src="../images/faces/face28.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -381,7 +381,8 @@
                           <th>N*</th>
                           <th>Nom</th>
                           <th>Type</th>
-                          <th>Durée</th>
+                          <th>Durée (En mois)</th>
+                          <th>Budget (FCFA)</th>
                         </tr>  
                       </thead>
                       <tbody>
@@ -391,6 +392,7 @@
                         <td class="font-weight-bold"> {{ $project->nom }} </td>
                         <td>{{ $project->type }}</td>
                         <td>{{ $project->duree }}</td>
+                        <td>{{ $project->budget }}</td>
                       </tr>
 
                         

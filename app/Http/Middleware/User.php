@@ -20,6 +20,10 @@ class User
         if (!Auth::check()) {
             return redirect('/login'); // Redirect to the login page if user is not authenticated
         }
+        if(Auth::user()->role != 'Client'){
+            return redirect('/manager/dashboard');
+        }
+
         return $next($request);
     }
 

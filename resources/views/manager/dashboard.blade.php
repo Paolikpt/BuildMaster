@@ -310,28 +310,67 @@
 
 
 
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+               
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Client</th>
+                            <th>Nom du projet</th>
+                            <th>Type</th>
+                            <th>Durée</th>
+                            <th>Budget</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($projects as $project)
+                            @if (!$project->managed)
+                                <tr>
+                                    <td class="py-1">
+                                        {{ $loop->iteration }}
+                                    </td>
+                                    <td class="py-1">
+                                        {{ $project->owner }}
+                                    </td>
+                                    <td>
+                                        {{ $project->nom }}
+                                    </td>
+                                    <td>
+                                        {{ $project->type }}
+                                    </td>
+                                    <td>
+                                        {{ $project->duree }}
+                                    </td>
+                                    <td>
+                                        {{ $project->budget }}
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="/manager/projects/manage/{{ $project->id }}"><button type="button" class="btn btn-warning">Gérer</button></a>
+                                    </td>
+                                </tr>
+                            @endif
+                        @endforeach
+                    </tbody>
+                </table>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
 
 
 
           <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card tale-bg">
-                <div class="card-people mt-auto">
-                  <img src="../images/dashboard/people.svg" alt="people">
-                  <div class="weather-info">
-                    <div class="d-flex">
-                      <div>
-                        <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
-                      </div>
-                      <div class="ml-2">
-                        <h4 class="location font-weight-normal">Bangalore</h4>
-                        <h6 class="font-weight-normal">India</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
             <div class="col-md-6 grid-margin transparent">
               <div class="row">
                 <div class="col-md-6 mb-4 stretch-card transparent">

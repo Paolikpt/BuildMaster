@@ -8,7 +8,7 @@ use App\Models\Project;
 
 class ProjetController extends Controller
 {
-    
+
     public function index()
     {
         $projects = Project::all();
@@ -16,12 +16,13 @@ class ProjetController extends Controller
     }
 
 
-    public function getDashboard(){
+    public function getDashboard()
+    {
         $projects = Project::all();
         return view('user.dashboard', compact('projects'));
     }
 
-   
+
 
 
 
@@ -32,9 +33,16 @@ class ProjetController extends Controller
             'description' => 'required',
             'type' => 'required',
             'duree' => 'required',
+            'budget' => 'required',
         ]);
 
-        Project::create($request->all());
+
+
+
+        $projectData = $request->all();
+        $projectData['owner'] = auth()->user()->email;
+
+        Project::create($projectData);
 
         return redirect('/user/projects')->with('success', 'Le projet a été créé avec succès.');
     }
@@ -64,22 +72,57 @@ class ProjetController extends Controller
 
     public function delete($id)
     {
-           // dd("lorem ipsum");
+        // dd("lorem ipsum");
 
-            $project = Project::findOrFail($id);
+        $project = Project::findOrFail($id);
         $project->delete();
-        
+
         // Rediriger ou effectuer d'autres actions après la suppression du projet
-        
+
         return redirect('/user/projects')->with('success', 'Projet supprimé avec succès');
-      
     }
 
-    public function getUserById($id){
+    public function getUserById($id)
+    {
         $project = Project::findOrFail($id);
         return view('user.updateProject', compact('project'));
     }
 
 
+    public function getManagerDashboard()
+    {
+        $projects = Project::all();
+        return view('manager.dashboard', compact('projects'));
+    }
 
+
+    public function addTaskToProject(Request $request, $id)
+    {
+        $project = Project::findOrFail($id);
+        $tache = $request->input('tache');
+
+        $project->taches()->push($tache);
+        $project->save();
+
+
+        return redirect('/manager/projects/manage/' +  $id, compact('project'))->with('success', 'La tâche a été ajoutée au projet.');
+    }
+
+
+
+    /*
+        public function getProjectByIdForAddTask(Request $request, $id)
+    {
+        $project = Project::findOrFail($id);
+        $tache = $request->input('tache');
+
+        $taches = $project->taches ?? []; // Récupère le tableau de tâches actuel ou initialise un tableau vide s'il est null
+        $taches[] = $tache; // Ajoute la nouvelle tâche au tableau
+
+        $project->taches = $taches; // Met à jour le tableau de tâches
+        $project->save();
+
+        return redirect('/manager/projects/manage/' +  $id)->with('success', 'La tâche a été ajoutée au projet.');
+    }
+    */
 }

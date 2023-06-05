@@ -16,7 +16,13 @@ return new class extends Migration
             $table->string('nom');
             $table->text('description');
             $table->string('type');
-            $table->string('duree');
+            $table->integer('duree'); // Nouvelle colonne duree            $table->decimal('budget');
+            $table->json('taches')->nullable();
+            $table->json('equipe')->nullable();
+            $table->string('owner')->nullable();
+            $table->string('manager')->nullable();
+            $table->boolean('managed')->default(false);
+            $table->decimal('budget')->nullable();
             $table->timestamps();
         });
     }

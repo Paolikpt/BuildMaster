@@ -346,9 +346,15 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="exampleInputMobile1" class="col-sm-3 col-form-label">Durée</label>
+                  <label for="exampleInputMobile1" class="col-sm-3 col-form-label">Durée (En mois)</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="duree" id="exampleInputMobile1" placeholder="10 mois..." required>
+                    <input type="number" class="form-control" name="duree" id="exampleInputMobile1" placeholder="10 mois..." required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="exampleInputMobilex" class="col-sm-3 col-form-label">Budget</label>
+                  <div class="col-sm-9">
+                    <input type="Number" class="form-control"  name="budget" id="exampleInputMobilex" placeholder="budget du projet" required>
                   </div>
                 </div>
    
@@ -395,6 +401,7 @@
                           <th>Nom</th>
                           <th>Type</th>
                           <th>Durée</th>
+                          <th>Budget</th>
                           <th class="text-center">Action</th>
                         </tr>  
                       </thead>
@@ -404,7 +411,8 @@
                         <td> {{ $loop->iteration }} </td>
                         <td class="font-weight-bold"> {{ $project->nom }} </td>
                         <td>{{ $project->type }}</td>
-                        <td>{{ $project->duree }}</td>
+                        <td>{{ $project->duree }} mois</td>
+                        <td>{{ $project->budget }}</td>
 
                         <td class="text-center">
                  
@@ -454,10 +462,15 @@
                                                                 <div class="form-group row">
                                                                   <label for="exampleInputMobile1" class="col-sm-3 col-form-label">Durée</label>
                                                                   <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" value="{{ $project->duree }}" name="duree" id="exampleInputMobile1" placeholder="10 mois..." required>
+                                                                    <input type="number" class="form-control" value="{{ $project->duree }}" name="duree" id="exampleInputMobile1" placeholder="10 mois..." required>
                                                                   </div>
                                                                 </div>
-                                                   
+                                                                <div class="form-group row">
+                                                                  <label for="exampleInputMobilex" class="col-sm-3 col-form-label">Budget</label>
+                                                                  <div class="col-sm-9">
+                                                                    <input type="number" class="form-control" value="{{ $project->budget }}" name="budget" id="exampleInputMobilex" placeholder="budget du projet" required>
+                                                                  </div>
+                                                                </div>
                                                                
                                                             
                                                                

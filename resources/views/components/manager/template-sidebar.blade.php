@@ -32,12 +32,7 @@
 
  
     
-  <li class="nav-item">
-    <a class="nav-link" href="/manager/taches">
-      <i class="icon-contract menu-icon"></i>
-      <span class="menu-title">Tâches</span>
-    </a>
-  </li>
+  
   <li class="nav-item">
     <a class="nav-link" href="/manager/parametre">
       <i class="icon-head menu-icon"></i>
