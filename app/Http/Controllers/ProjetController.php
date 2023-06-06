@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Tache;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -24,8 +25,14 @@ class ProjetController extends Controller
     public function getDashboard()
     {
         $projects = Project::all();
-        return view('user.dashboard', compact('projects'));
+        $submits = Project::where('owner', Auth::user()->email)->get();
+        $validate = Project::where('owner', Auth::user()->email)->where('managed', true)->get();
+        $validated = $validate->count();
+        $submitsCount = $submits->count();
+        return view('user.dashboard', compact('projects', 'validated', 'submitsCount'));
     }
+
+
 
 
 
@@ -93,11 +100,13 @@ class ProjetController extends Controller
         return view('user.updateProject', compact('project'));
     }
 
-
+//
     public function getManagerDashboard()
     {
         $projects = Project::all();
-        return view('manager.dashboard', compact('projects'));
+        $validate = Project::where('manager', Auth::user()->id)->where('managed', true)->get();
+        $validated = $validate->count();
+        return view('manager.dashboard', compact('projects', 'validated'));
     }
 
 
@@ -178,7 +187,7 @@ class ProjetController extends Controller
     public function manageProject($project_id, $manager_id)
     {
         $projectx = Project::findOrFail($project_id);
-        $projectx->manager = $manager_id;
+        $projectx->manager = Auth::user()->id;
         $projectx->managed = true;
         $projectx->save();
 
@@ -198,7 +207,12 @@ class ProjetController extends Controller
 
     public function getManagerProjects()
     {
-        $projects = Project::all();
+
+        $projects = Project::where('manager', Auth::user()->id)->get();
+
+        $tasks = Tache::all();
+      
+
         return view('manager.projects', compact('projects'));
     }
 }

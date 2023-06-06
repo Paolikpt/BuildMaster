@@ -60,5 +60,35 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function updateProfile(Request $request)
+    {
+
+
+        $userById =  User::findOrFail(Auth::user()->id);
+
+        $request->validate([
+            'name' => 'required',
+            'prenom' => 'required',
+            'email' => 'required|email',
+            'password' => 'nullable|min:6|confirmed',
+        ]);
+
+        
+
+    
+
+        $userById->update($request->all());
+
+        
+
+
+         
+
+     
+
+
+        return redirect()->back()->with('success', 'Vos informations ont été mises à jour.');
+    }
+
     
 }

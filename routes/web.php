@@ -105,7 +105,7 @@ Route::get('/user/projects', function () {
 })->middleware("user");
 
 
-Route::post('/user/projects', [ProjetController::class, 'create']);
+Route::post('/user/projects', [ProjetController::class, 'create'])->middleware("user");
 
 Route::get('/user/projects/{id}', [ProjetController::class, 'getUserById'])->middleware("user");
 
@@ -116,6 +116,8 @@ Route::delete('/user/projets/{id}', [ProjetController::class, 'delete'])->name('
 Route::put('/user/projects/{id}', [ProjetController::class, 'update'])->name('projects.update')->middleware('user');
 
 Route::get('/user/dashboard', [ProjetController::class, 'getDashboard'])->middleware("user")->name('dashboard.index');
+
+Route::put('/user/parametre/update', [UserController::class, 'updateProfile'])->middleware("user");
 
 
 
@@ -167,6 +169,6 @@ Route::middleware('manager')->prefix('manager')->group(function () {
 
     Route::get('/manage/project/{project_id}/{manager_id}', [ProjetController::class, 'manageProject']);
 
-
+    
 });
 

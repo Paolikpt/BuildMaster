@@ -1,4 +1,4 @@
-<?php 
+  <?php 
   use Illuminate\Support\Facades\Auth;
 
   $user = Auth::user();
@@ -33,7 +33,7 @@
                   <i class="icon-search"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Rechercher" aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
@@ -144,7 +144,7 @@
                                       <form class="forms-sample" method="POST" action="/manager/projects/{{ $project->id }}/tasks/add">
                                         @csrf
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="myModalLabel"><i class="bi bi-bag mr-3" style="scale: 2 !important"></i> Soumission d'un Projet</h5>
+                                            <h5 class="modal-title" id="myModalLabel"><i class="bi bi-bag mr-3" style="scale: 2 !important"></i> Ajout d'une tâche au Projet</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
