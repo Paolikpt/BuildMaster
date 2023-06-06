@@ -48,8 +48,8 @@
           </div>
   
         </div>
-      </section><!-- End Get Started Section
-</main>
+      </section>
     
   
 @endsection
+
