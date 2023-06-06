@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('taches', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
             $table->text('description');
-            $table->string('type');
-            $table->integer('duree'); // Nouvelle colonne duree            $table->decimal('budget');
-            $table->json('equipe')->nullable();
-            $table->string('owner')->nullable();
-            $table->string('manager')->nullable();
-            $table->boolean('managed')->default(false);
-            $table->decimal('budget')->nullable();
+            $table->integer('duree');
+            $table->decimal('budget');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projcets')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('taches');
     }
 };

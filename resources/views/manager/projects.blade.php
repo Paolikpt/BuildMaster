@@ -5,7 +5,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  @include('components.default.template-head')
+  @include('components.default.template-head2')
 
 <body>
   

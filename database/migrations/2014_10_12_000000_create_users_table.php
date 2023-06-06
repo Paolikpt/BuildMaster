@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->enum('role', ['Entreprise', 'Client']);
             $table->rememberToken();
+            $table->unsignedBigInteger('project_id')->nullable();
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,5 +33,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('users_project_id_foreign');
+            $table->dropColumn('project_id');
+        });
     }
+
 };

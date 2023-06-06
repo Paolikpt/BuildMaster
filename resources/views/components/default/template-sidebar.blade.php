@@ -27,18 +27,7 @@
 
      </div>
 
-   
-      
-    <li class="nav-item">
-      <a class="nav-link" href="/user/taches">
-        <i class="icon-contract menu-icon"></i>
-        <span class="menu-title">Tâches</span>
-      </a>
-    </li>
-    <div class="text-center  mx-auto">
-      <div class="my-4 text-center" ></div>
 
-   </div>
     <li class="nav-item">
       <a class="nav-link" href="/user/parametre">
         <i class="icon-head menu-icon"></i>

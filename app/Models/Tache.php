@@ -9,6 +9,12 @@ class Tache extends Model
 {
     use HasFactory;
 
+
     protected $fillable = ['nom', 'description', 'duree', 'budget'];
-}
+
+    public function projet()
+    {
+        return $this->belongsTo(Project::class);
+    }
     
+}

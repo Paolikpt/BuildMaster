@@ -130,9 +130,7 @@ Route::middleware('manager')->prefix('manager')->group(function () {
 
 
     
-    Route::get('/projects', function () {
-        return view('manager.projects');
-    });
+    Route::get('/projects', [ProjetController::class, 'getManagerProjects'])->name('projects.index');
 
     Route::get('/parametre', function () {
         return view('manager.parametres');
@@ -163,6 +161,12 @@ Route::middleware('manager')->prefix('manager')->group(function () {
 
 
     Route::post('/projects/{id}/tasks/add', [ProjetController::class, 'addTaskToProject']);
+
+
+    Route::post('/{id}/equipe/add', [ProjetController::class, 'addMemberToProject']);
+
+    Route::get('/manage/project/{project_id}/{manager_id}', [ProjetController::class, 'manageProject']);
+
 
 });
 

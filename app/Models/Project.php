@@ -9,13 +9,10 @@ class Project extends Model
 {
     use HasFactory;
 
-    /**
-     * @var array
-     */
-    protected $taches = [];
+  
 
 
-    protected $fillable = ['nom', 'description', 'type', 'duree', 'taches', 'equipe', 'owner', 'manager', 'managed', 'budget'];
+    protected $fillable = ['nom', 'description', 'type', 'duree', 'equipe', 'owner', 'manager', 'managed', 'budget'];
 
     protected $casts = [
         'taches' => 'array',
